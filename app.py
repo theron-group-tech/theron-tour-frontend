@@ -1,10 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 
-app = Flask(__name__, template_folder='templates', static_folder='static')
+app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('tour.html')  # muda por vertical
+    return render_template('tour.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.errorhandler(404)
+def page_not_found(e):
+    return redirect(url_for('index'))
+
+if __name__ == "__main__":
+    app.run()
