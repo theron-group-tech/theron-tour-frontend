@@ -6,3 +6,7 @@ venv/
 instance/
 .DS_Store
 ARQUITETURA DO PROJETO.md
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
